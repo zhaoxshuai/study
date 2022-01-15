@@ -14,5 +14,6 @@ public class Java8ForMap {
         List<Boolean> collect = list.stream().map(x -> x > 2).collect(Collectors.toList());
         System.out.println(collect);
         System.out.println("HaHa");
+        System.out.println("fdsfas");
     }
 }
