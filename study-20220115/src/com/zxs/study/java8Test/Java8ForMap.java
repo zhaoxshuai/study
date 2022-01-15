@@ -13,5 +13,6 @@ public class Java8ForMap {
         List<Integer> list = Arrays.asList(1, 2, 4, 3, 7);
         List<Boolean> collect = list.stream().map(x -> x > 2).collect(Collectors.toList());
         System.out.println(collect);
+        System.out.println("HaHa");
     }
 }
