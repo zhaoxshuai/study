@@ -1,4 +1,4 @@
-package com.zxs.study;
+package com.zxs.study.test;
 
 /**
  * @author zxs
