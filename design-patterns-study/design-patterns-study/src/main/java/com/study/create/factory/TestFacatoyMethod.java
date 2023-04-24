@@ -10,7 +10,6 @@ public class TestFacatoyMethod {
         //test static factory method
         StaticFactory.create(Americano.class);
 
-
         System.out.println("---------test abstract factory method----------");
         AmericanFactory americanFactory = new AmericanFactory();
         americanFactory.createCoffee();
