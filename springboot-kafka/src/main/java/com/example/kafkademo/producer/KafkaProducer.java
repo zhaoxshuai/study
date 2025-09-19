@@ -7,12 +7,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 @Component
 public class KafkaProducer {
 
     private final KafkaTemplate<String, MessageDTO> kafkaTemplate;
 
     public KafkaProducer(KafkaTemplate<String, MessageDTO> kafkaTemplate) {
+        new ConcurrentHashMap<String,String>().put("key","value");
         this.kafkaTemplate = kafkaTemplate;
     }
 

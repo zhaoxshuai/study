@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    # Kafka 服务器地址
+    bootstrap-servers: 8.145.49.180:9092
+
+    # 生产者配置
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      # 消息确认机制: all 表示所有副本都确认
+      acks: all
+      # 重试次数
+      retries: 3
+
+    # 消费者配置
+    consumer:
+      group-id: demo-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.example.kafkademo.dto"  # 信任的包路径
+
+    # 监听器配置
+    listener:
+      # 批量消费模式
+      type: single
+      # 并发消费者数量
+      concurrency: 3
